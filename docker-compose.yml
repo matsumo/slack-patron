@@ -19,4 +19,11 @@ services:
      - mongo
 
   mongo:
+    restart: always
     image: mongo
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:
+    driver: local
